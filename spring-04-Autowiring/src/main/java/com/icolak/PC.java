@@ -11,14 +11,16 @@ import org.springframework.stereotype.Component;
 @Component
 public class PC {
 
-    @Autowired
     private Case theCase;
-    @Autowired
     private Monitor monitor;
-    @Autowired
     private Motherboard motherboard;
-
-
+    @Autowired // Starting with Spring 4.3 if you have constructor di is okey
+                // @Autowired is not mandatory, you can omit writing it.
+    public PC(Case theCase, Monitor monitor, Motherboard motherboard) {
+        this.theCase = theCase;
+        this.monitor = monitor;
+        this.motherboard = motherboard;
+    }
 
     public void powerUp() {
         theCase.pressPowerButton();
