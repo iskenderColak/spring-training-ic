@@ -3,12 +3,15 @@ package com.icolak.service;
 import com.icolak.model.Comment;
 import com.icolak.proxy.CommentNotificationProxy;
 import com.icolak.repository.CommentRepository;
+import org.springframework.stereotype.Component;
 
+@Component
 public class CommentService {
 
-    private final CommentRepository commentRepository;
-    private final CommentNotificationProxy commentNotificationProxy;
+    private final CommentRepository commentRepository; // putting final is important
+    private final CommentNotificationProxy commentNotificationProxy; // not to forget initializing
 
+    // Creating constructor for automatically DI
     public CommentService(CommentRepository commentRepository, CommentNotificationProxy commentNotificationProxy) {
         this.commentRepository = commentRepository;
         this.commentNotificationProxy = commentNotificationProxy;
