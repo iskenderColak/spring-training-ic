@@ -23,6 +23,9 @@ public class icolakApplication {
         CommentService commentService = context.getBean(CommentService.class);
         commentService.publishComment(comment);
 
+        commentService.printConfigData();
+        commentService.printDBConfigData();
+
         String str = context.getBean(String.class);
         System.out.println(str);
     }
