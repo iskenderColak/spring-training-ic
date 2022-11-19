@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"    lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--Display value of model-->
+<h2 th:text="${studentList.get(0).firstName}"></h2>
+<h2 th:text="${studentList.get(0).lastName}"></h2>
+
+<!--Concatenation-->
+<h2 th:text="${ 'Hello' + studentList.get(0).firstName }"></h2>
+<h2 th:text="${ studentList.get(0).firstName + ' ' + studentList.get(0).lastName}"></h2>
+
+<!--Link-->
+<h2>
+    <a th:href="@{https://cydeo.com}">Cydeo Page</a>
+</h2>
+<h2>
+    <a th:href="@{/student/welcome}">Welcome</a>
+</h2>
+
+<!--Adding Parameters in Link-->
+<h2>
+    <a th:href="@{/student/welcome(id=3)}">Link1</a>
+</h2>
+
+<h2>
+    <a th:href="@{/student/welcome(name=${studentList.get(0).firstName})}">Link2</a>
+</h2>
+
+<h2>
+    <a th:href="@{/student/welcome(name=${studentList.get(0).firstName}, age=${studentList.get(0).age})}">Link3</a>
+</h2>
+
+<!--Iteration-->
+
+<h2>Printing Students</h2>
+<h3>
+<ul>
+    <li th:each=" student : ${studentList}" th:text="${student}"></li>
+</ul>
+</h3>
+<h2>Printing Student's First Name</h2>
+
+    <ul>
+        <h2>
+        <li th:each=" student : ${studentList}" th:text="${student.firstName}"></li>
+        </h2>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
