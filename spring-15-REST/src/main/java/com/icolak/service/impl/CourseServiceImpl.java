@@ -5,10 +5,11 @@ import com.icolak.entity.Course;
 import com.icolak.repository.CourseRepository;
 import com.icolak.service.CourseService;
 import com.icolak.util.MapperUtil;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
+@Service
 public class CourseServiceImpl implements CourseService {
 
     private final CourseRepository courseRepository;
