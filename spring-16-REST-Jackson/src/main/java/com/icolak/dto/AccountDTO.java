@@ -18,7 +18,7 @@ public class AccountDTO {
     private String country;
     private String state;
     private String city;
-    private int age;
+    private Integer age;
     private String postalCode;
     @JsonBackReference  // This field is not going to be serialized
     private UserDTO user;
