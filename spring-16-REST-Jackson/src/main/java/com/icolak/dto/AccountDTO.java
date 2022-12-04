@@ -20,6 +20,7 @@ public class AccountDTO {
     private String city;
     private Integer age;
     private String postalCode;
-    @JsonBackReference  // This field is not going to be serialized
+    @JsonBackReference (value = "user-account-reference")
+    // This field is not going to be serialized
     private UserDTO user;
 }
