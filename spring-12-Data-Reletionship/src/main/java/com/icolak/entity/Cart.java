@@ -15,6 +15,8 @@ import java.util.List;
 public class Cart extends BaseEntity{
 
     @ManyToMany
-    @JoinColumn(name = "cart_item_rel")
-    private List<Item> item;
+    @JoinTable(name = "cart_item_rel",
+    joinColumns = @JoinColumn(name = "c_id"),
+    inverseJoinColumns = @JoinColumn(name = "i_id"))
+    private List<Item> items;
 }
