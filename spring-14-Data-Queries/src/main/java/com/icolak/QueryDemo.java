@@ -22,11 +22,18 @@ public class QueryDemo implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
+        System.out.println("-----------REGIONS-----------");
         System.out.println("findByCountry: " + regionRepository.findAllByCountry("Canada"));
         System.out.println("findByCountryContaining:" + regionRepository.findAllByCountryContaining("United"));
         System.out.println("findByCountryContainsOrderByRegion:" + regionRepository.findAllByCountryContainingOrderByRegionDesc("United"));
         System.out.println("findTop2ByCountry:" + regionRepository.findTop2ByCountry("United States"));
         System.out.println("findTopByCountryContainsOrderByRegion:" + regionRepository.findTopByCountryContainsOrderByRegion("United States"));
+
+        System.out.println("-----------DEPARTMENTS----------");
+        System.out.println("findByDepartment:" + departmentRepository.findAllByDepartment("Furniture"));
+        System.out.println("findByDivision:" + departmentRepository.findAllByDivision("Health"));
+        System.out.println("findByDivisionEndsWith:" + departmentRepository.findAllByDivisionEndsWith("ics"));
+        System.out.println("findDistinctTop3ByDivisionContains:" + departmentRepository.findDistinctTop3ByDivisionContains("Hea"));
 
 
     }
