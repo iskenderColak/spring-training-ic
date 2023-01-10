@@ -31,7 +31,7 @@ public class CourseController_ResponseWrapper {
         return ResponseEntity
                 .status(HttpStatus.ACCEPTED)
                 .header("Operation", "Get Course")
-                .body(new ResponseWrapper("Course" + courseId + " retrieved successfully", courseService.getCourseById(courseId)));
+                .body(new ResponseWrapper("Course-" + courseId + " retrieved successfully", courseService.getCourseById(courseId)));
     }
 
     @PostMapping
