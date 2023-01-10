@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "picture"
 })
 @Generated("jsonschema2pojo")
-public class Datum {
+public class EmployeeDTO {
 
     @JsonProperty("id")
     private String id;

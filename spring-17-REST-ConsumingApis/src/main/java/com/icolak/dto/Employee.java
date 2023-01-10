@@ -23,7 +23,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class Employee {
 
     @JsonProperty("data")
-    private List<Datum> data = null;
+    private List<EmployeeDTO> data = null;
     @JsonProperty("total")
     private Integer total;
     @JsonProperty("page")
@@ -34,12 +34,12 @@ public class Employee {
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("data")
-    public List<Datum> getData() {
+    public List<EmployeeDTO> getData() {
         return data;
     }
 
     @JsonProperty("data")
-    public void setData(List<Datum> data) {
+    public void setData(List<EmployeeDTO> data) {
         this.data = data;
     }
 
