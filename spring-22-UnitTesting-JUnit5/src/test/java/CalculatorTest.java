@@ -27,6 +27,7 @@ class CalculatorTest {
     }
 
     @Test
+    @DisplayName("MyMethod")
     void add() {
         System.out.println("Add method");
         int actual = Calculator.add(2,3);
@@ -88,4 +89,6 @@ class CalculatorTest {
         assertNotSame(c1,c3);
 
     }
+
+    // maven-surefire-plugin // it is for terminal
 }
