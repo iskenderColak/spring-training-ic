@@ -65,7 +65,7 @@ public class ProjectController {
     }
 
     @GetMapping("/update/{projectCode}")
-    public String editProject(@PathVariable("projectCode") String projectCode, Model model){
+    public String editProject(@PathVariable("projectCode") String projectCode, Model model) {
 
         model.addAttribute("project", projectService.findByProjectCode(projectCode));
         model.addAttribute("managers", userService.listAllUsersByRole("Manager"));
@@ -95,7 +95,7 @@ public class ProjectController {
 
     @GetMapping("/manager/project-status")
     public String getProjectByManager(Model model) {
-        
+
         List<ProjectDTO> projects = projectService.listAllProjectDetails();
 
         model.addAttribute("projects", projects);
