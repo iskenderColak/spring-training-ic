@@ -21,6 +21,8 @@ public class AccountDTO {
     private Integer age;
     private String postalCode;
     @JsonBackReference (value = "user-account-reference")
+    // If we use @JsonIgnore instead of @JsonBackReference, we can not send and get user(completely ignored)
+    // however now we can send user but not get user. This is difference between these two.
     // This field is not going to be serialized
     private UserDTO user;
 }
