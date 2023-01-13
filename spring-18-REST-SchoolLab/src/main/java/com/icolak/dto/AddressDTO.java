@@ -29,9 +29,9 @@ public class AddressDTO {
 
     private AddressType addressType;
 
-    @JsonBackReference(value = "student-address-reference")          // defaultReference
-    private StudentDTO student;
-
+    @JsonBackReference(value = "student-address-reference")          // Since we have more than one class which has
+    private StudentDTO student;                             // address field, we should assign different values then
+                                                           // spring is able to differ them
     @JsonBackReference(value = "parent-address-reference")          // defaultReference
     private ParentDTO parent;
 
