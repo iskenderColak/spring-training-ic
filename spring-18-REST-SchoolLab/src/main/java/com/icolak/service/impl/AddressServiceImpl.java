@@ -45,7 +45,8 @@ public class AddressServiceImpl implements AddressService {
                 .orElseThrow(() -> new Exception("No Address Found!"));
 
         AddressDTO addressDTO = mapperUtil.convert(foundAddress, new AddressDTO());
-        addressDTO.setCurrentTemperature(getCurrentWeather(addressDTO.getCity()).getCurrent().getTemperature());
+        addressDTO.setCurrentTemperature(getCurrentWeather(addressDTO.getCity()) // returns WeatherDTO
+                .getCurrent().getTemperature());
 
         return addressDTO;
 
