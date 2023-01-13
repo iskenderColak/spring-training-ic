@@ -1,7 +1,6 @@
 package com.icolak.entity;
 
 import com.icolak.enums.Gender;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
