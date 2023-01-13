@@ -39,5 +39,6 @@ public class AddressDTO {
     private TeacherDTO teacher;
 
     private Integer currentTemperature;     // Weather information, which we will later get it from 3rd party API
-
+    // we don't put this field in entity class, so until we consume and get the info this field ganna be null,
+    // if null by using @JsonInclude(JsonInclude.Include.NON_NULL) we don't display this field
 }
