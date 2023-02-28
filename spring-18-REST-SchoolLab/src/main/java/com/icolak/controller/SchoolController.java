@@ -55,6 +55,8 @@ public class SchoolController {
 
     @PutMapping("/address/{id}")
     public AddressDTO updateAddress(@PathVariable("id") Long id, @RequestBody AddressDTO addressDTO) throws Exception {
+        // Since we put @JsonIgnore at top of the id field, we can't pass id from postman, because it is ignored.
+        // So we should set id here
         addressDTO.setId(id);
         return addressService.update(addressDTO);
     }
