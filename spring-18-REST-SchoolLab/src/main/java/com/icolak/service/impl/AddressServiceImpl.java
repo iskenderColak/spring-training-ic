@@ -44,6 +44,8 @@ public class AddressServiceImpl implements AddressService {
         Address foundAddress = addressRepository.findById(id)
                 .orElseThrow(() -> new Exception("No Address Found!"));
 
+        // after we get the address from the db, since this address entity doesn't have the temperature field
+        // we set temperature for the addressDTO before returning.
         AddressDTO addressDTO = mapperUtil.convert(foundAddress, new AddressDTO());
         addressDTO.setCurrentTemperature(getCurrentWeather(addressDTO.getCity()) // returns WeatherDTO
                 .getCurrent().getTemperature());
