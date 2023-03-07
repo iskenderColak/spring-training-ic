@@ -19,7 +19,8 @@ public class OrganizationController {
     }
 
     @GetMapping("/{organizationId}")
-    @RolesAllowed({"ADMIN","USER"})
+    @RolesAllowed({"ADMIN","USER"}) // it is coming from securityConfig class from the annotation
+    // @EnableGlobalMethodSecurity(jsr250Enabled = true)
     public ResponseEntity<Organization> getOrganization(@PathVariable("organizationId") Long organizationId) throws Exception {
         return ResponseEntity.ok(organizationService.findById(organizationId));
     }
